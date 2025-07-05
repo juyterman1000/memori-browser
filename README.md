@@ -87,36 +87,6 @@ memori-browser/
  package.json
 ```
 
-##  Development Roadmap
-
-### Phase 1: Core Browser (MVP) 
-- [x] Project setup and architecture
-- [x] Basic UI components (SearchBar, TabBar, BrowserView, MemoryPanel)
-- [x] Tauri shell configuration
-- [ ] Basic tab management
-- [ ] SQLite storage integration
-- [ ] Basic fuzzy search
-
-### Phase 2: AI Integration
-- [ ] Local LLM integration
-- [ ] Vector memory system
-- [ ] AI-powered search
-- [ ] Smart tab grouping
-- [ ] Context preservation
-
-### Phase 3: Advanced Features
-- [ ] Voice control
-- [ ] Cross-device sync
-- [ ] Plugin system
-- [ ] Advanced AI features
-- [ ] Performance optimizations
-
-### Phase 4: Polish & Distribution
-- [ ] UI/UX refinements
-- [ ] Comprehensive testing
-- [ ] Documentation
-- [ ] Distribution setup
-- [ ] Community features
 
 ##  Development Commands
 
@@ -135,9 +105,6 @@ npm run lint             # Run linting
 npm run format           # Format code
 ```
 
-##  Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 ### Development Guidelines
 - **Performance First**: Every feature must justify its performance cost
