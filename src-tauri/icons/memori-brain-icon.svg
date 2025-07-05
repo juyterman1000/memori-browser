@@ -1,0 +1,116 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Electric gradient -->
+    <linearGradient id="electric" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F5FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF00E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE500;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dark metallic gradient -->
+    <radialGradient id="metallic">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1e;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Neon glow -->
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Inner glow -->
+    <filter id="innerGlow">
+      <feFlood flood-color="#FFFFFF" flood-opacity="0.5"/>
+      <feComposite in2="SourceAlpha" operator="out"/>
+      <feGaussianBlur stdDeviation="3"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <!-- Premium dark background -->
+  <rect width="256" height="256" rx="52" fill="url(#metallic)"/>
+  
+  <!-- The icon: Lightning bolt forming a brain silhouette -->
+  <g transform="translate(128, 128)">
+    <!-- Background glow -->
+    <ellipse cx="0" cy="0" rx="80" ry="70" fill="url(#electric)" opacity="0.15" filter="url(#neon)"/>
+    
+    <!-- The lightning brain -->
+    <g filter="url(#neon)">
+      <!-- Main lightning path that forms brain shape -->
+      <path d="M -40,-60 
+               L -20,-60
+               Q 10,-60 20,-40
+               L 10,-20
+               Q 30,-20 40,-5
+               L 20,0
+               Q 35,5 35,25
+               L 15,30
+               Q 20,40 10,55
+               L -5,45
+               Q -15,50 -30,45
+               L -25,30
+               Q -40,25 -45,10
+               L -30,5
+               Q -45,-5 -45,-25
+               L -25,-20
+               Q -40,-30 -40,-60
+               Z"
+            fill="none" 
+            stroke="url(#electric)" 
+            stroke-width="4"
+            stroke-linejoin="round"/>
+      
+      <!-- Center lightning bolt -->
+      <path d="M 0,-55 L -10,-20 L 5,-25 L -5,10 L 10,5 L 0,50"
+            fill="none" 
+            stroke="#FFFFFF" 
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            filter="url(#innerGlow)"/>
+    </g>
+    
+    <!-- Energy particles -->
+    <g opacity="0.9">
+      <circle r="2" fill="#00F5FF">
+        <animateMotion dur="3s" repeatCount="indefinite">
+          <mpath href="#particle1"/>
+        </animateMotion>
+      </circle>
+      <circle r="2" fill="#FF00E5">
+        <animateMotion dur="3.5s" repeatCount="indefinite">
+          <mpath href="#particle2"/>
+        </animateMotion>
+      </circle>
+      <circle r="2" fill="#FFE500">
+        <animateMotion dur="4s" repeatCount="indefinite">
+          <mpath href="#particle3"/>
+        </animateMotion>
+      </circle>
+    </g>
+    
+    <!-- Hidden paths for particle animation -->
+    <path id="particle1" d="M -60,0 Q 0,-60 60,0 Q 0,60 -60,0" fill="none"/>
+    <path id="particle2" d="M 0,-60 Q 60,0 0,60 Q -60,0 0,-60" fill="none"/>
+    <path id="particle3" d="M -42,-42 Q 42,-42 42,42 Q -42,42 -42,-42" fill="none"/>
+  </g>
+  
+  <!-- Corner accent - electric spark -->
+  <g transform="translate(200, 56)">
+    <path d="M 0,-15 L 5,-5 L -3,-5 L 3,5 L -5,5 L 0,15" 
+          stroke="url(#electric)" 
+          stroke-width="2" 
+          fill="none" 
+          opacity="0.7"
+          filter="url(#neon)"/>
+  </g>
+</svg>
